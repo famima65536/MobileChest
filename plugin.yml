@@ -1,0 +1,5 @@
+name: MobileChest
+main: famima65536\mobilechest\MobileChest
+version: 1.0.0
+api: [3.0.0]
+author: famima65536
