@@ -39,9 +39,12 @@ class EventListener implements Listener {
         if($block instanceof Chest) {
             $item = $event->getItem();
             $player = $event->getPlayer();
+            //XXX: not good code
             $block->place($item, $block, Block::get(0), 0, new Vector3(0, 0, 0), $player);
             $this->plugin->setChestContentsFromMobileChest($block, $item);
-            $player->getInventory()->removeItem($item);
+            $item->pop();
+            $player->getInventory()->setItemInHand($item);
+            
             $event->setCancelled();
         }
     }
